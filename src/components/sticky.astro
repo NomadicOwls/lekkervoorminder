@@ -1,0 +1,124 @@
+---
+import { Tick } from "@components/ui/icons";
+import Link from "@components/ui/link.astro";
+import Contactform from "@components/contactform.astro";
+const { plan } = Astro.props;
+---
+<script src="../assets/js/multi-step-form.js"></script>
+<script src="../assets/js/contact-validate.js"></script>
+
+<section class="flex flex-col mt-10 md:mt-0 w-full lg:w-1/2 md:p-12 space-y-6 ">
+    <aside class="lg:sticky lg:top-5 lg:-mt-45vh bg-white shadow rounded-xl px-10 py-10" style="">
+        <form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate>
+            <input type="hidden" name="access_key" value="4288f45e-68c7-4ad1-8e0e-fe89d39ea2b8">
+            <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+            <!-- <input type="hidden" name="redirect" value="https://web3forms.com/success"> -->
+
+            <div id="formhead" class="mb-7">
+                <div id="formtitle">
+                    <span class="block font-semibold text-xl">Hoe kan ik je helpen?</span>
+                </div>
+                <div id="formindicator" class="hidden flex justify-between items-center mx-auto">
+                    <a id="step-1-indicator" class="inline-flex items-center justify-center border font-medium bg-blue-500 rounded-full h-8 w-8 text-white"> 1</a>
+                    <div class="border-t border-gray-300 flex-1"></div>
+                    <a id="step-2-indicator" class="borderinline-flex items-center justify-center font-medium rounded-full border-b-2 h-8 w-8"> 2</a>
+                </div>
+            </div>
+
+            
+
+            
+            <div id="step-1">
+                <!-- form - start -->
+                <!-- <input type="text" class="hidden" name="fax"/> -->
+                <div class="flex flex-col mb-4 py-2">
+                    <label for="rechtsvorm" class="block mb-2 text-sm font-medium text-gray-900">Wat is je rechtsvorm?</label>
+                    <select name="rechtsvorm" id="" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="eenmanszaak / zzp">Eenmanszaak / ZZP</option>
+                        <option value="vof">VOF. / Maatschap</option>
+                        <option value="bv">BV.</option>
+                        <option value="stichting">Stichting / Vereniging</option>
+                        <option value="particulier">Particulier</option>
+                    </select>
+                </div>
+                <div class="flex flex-col mb-4 py-2">
+                    <label for="number_invoices" class="block mb-2 text-sm font-medium text-gray-900">Aantal in/verkoop bonnetjes per maand</label>
+                    <select name="number_invoices" id="" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="< 25">25 of minder</option>
+                        <option value="25 - 100">25 tot 100</option>
+                        <option value="100 - 250">100 tot 250</option>
+                        <option value="250 - 500">250 tot 500</option>
+                        <option value="500+">500 of meer</option>
+                    </select>
+                </div>
+                <div class="flex flex-col mb-2 py-2">
+                    <label for="preferred_services" class="block mb-2 text-sm font-medium text-gray-900">Wat wil je graag uitbesteden?</label>
+                    <select id="preferred_services" name="preferred_services[]" multiple class="preferredservices border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="Volledige Boekhouding">Volledige boekhouding</option>
+                        <option value="Jaarrekening">Jaarrekening</option>
+                        <option value="Aangifte inkomstenbelasting">Aangifte inkomstenbelasting</option>
+                        <option value="Aangifte omzetbelasting">Aangifte omzetbelasting</option>
+                        <option value="Aangifte vennootschapsbelasting">Aangifte vennootschapsbelasting</option>
+                        <option value="Salarisadministratie">Salarisadministratie</option>
+                        <option value="Overige werkzaamheden">Overige werkzaamheden</option>
+                    </select>
+                </div>
+                <div class="flex flex-col mb-4 py-2">
+                    <label for="aanlevermethode" class="block mb-2 text-sm font-medium text-gray-900">Hoe wil je de administratie aanleveren?</label>
+                    <select name="aanlevermethode" class="delivery_method border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="Volledig digitaal">Volledig digitaal</option>
+                        <option value="Gedeeltelijk digitaal">Deels digitaal</option>
+                        <option value="Anders">Anders</option>
+                    </select>
+                </div>
+                <div class="flex items-center justify-between">
+                    <a id="next-btn" class="px-6 py-2 text-sm text-white bg-indigo-500 rounded-lg outline-none hover:bg-indigo-600 ring-indigo-300">
+                        Volgende stap
+                    </a>
+                </div>
+            </div>
+            <div id="step-2" class="hidden">
+                <div class="mb-6">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Voor en achternaam</label>
+                    <input type="text" required class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="name" />
+                    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+                        Vul je naam in
+                    </div>
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                </div>
+                <div class="mb-6">
+                    <label for="email_address" class="block mb-2 text-sm font-medium text-gray-900">Email adres</label><input id="email_address" type="email" name="email" required class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <div class="empty-feedback text-red-400 text-sm mt-1">
+                        Vul je email adres in
+                    </div>
+                    <div class="invalid-feedback text-red-400 text-sm mt-1">
+                        Vul een geldig email adres in
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Telefoonnummer</label>
+                    <input name="phone" type="phone" id="phone" required class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+                        Vul je telefoonnummer / Whatsapp in
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Wat kunnen wij voor je betekenen?</label>
+                    <textarea name="message" required class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+                    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+                        Hoe kunnen wij je helpen?
+                    </div>
+
+                </div>
+                <div class="flex justify-between">
+                    <a id="prev-btn" class="py-2 cursor-pointer"> Vorige stap</a>
+                    <button type="submit" class="px-6 py-2 text-sm text-white bg-indigo-500 rounded-lg outline-none hover:bg-indigo-600 ring-indigo-300">Submit</button>
+                </div>
+                <div class="flex justify-between">
+                    <div id="result" class="mt-3 text-center"></div>
+                </div>
+   
+            </div>
+        </form> 
+    </aside>
+</section>

@@ -1,0 +1,14 @@
+---
+import FaqItem from "./faqitem.astro";
+
+const { faqItems } = Astro.props; 
+
+---
+
+<div id="accordion-collapse" data-accordion="open">
+    {
+        faqItems && faqItems.map((item,idx) => {
+            return (<FaqItem index={idx} question={item.question} answer={item.answer}/>)
+        })
+    }
+</div>

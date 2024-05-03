@@ -1,0 +1,33 @@
+---
+import { Icon } from "astro-icon";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Button from "@components/ui/button.astro";
+import Contactform from "@components/contactform.astro";
+---
+
+<Layout title="Contact">
+    <div class="bg-babyblue flex h-96">
+        <div class="m-auto text-center">
+            <h1 class="font-bold text-6xl text-gray-800">Contact</h1>
+            <p class="text-lg font-light mt-4">Vul het contactformulier in voor meer informatie</p>
+        </div>
+    </div>
+    <Container>
+        <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+            <div>
+                <h2 class="font-medium text-2xl text-gray-800">Boekhouder 't Gooi</h2>
+                <p class="text-lg leading-relaxed text-slate-500 mt-3">Vul het contactformulier in en wij nemen z.s.m. contact met je op</p>
+                <div class="mt-5">
+                    <div class="flex items-center mt-2 space-x-2 text-gray-600">
+                        <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a href="">info[@]boekhouder-het-gooi.nl</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <Contactform />
+            </div>
+        </div>
+    </Container>
+</Layout>

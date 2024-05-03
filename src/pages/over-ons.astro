@@ -1,0 +1,43 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import headerImage from "assets/woman-laptop.svg";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingTables from "@components/pricingTables.astro";
+import USP from "@components/usp.astro";
+---
+<Layout title="About">
+    <div class="bg-babyblue flex h-96">
+        <div class="m-auto text-center">
+            <h1 class="font-bold text-6xl text-gray-800">
+                Over ons
+                </h1>
+                <p class="text-lg font-light">
+                    Wij maken ondernemen weer makkelijk
+                </p>
+        </div>
+    </div>
+    <Container>
+        <div class="flex flex-col max-w-5xl mx-auto my-16 lg:flex-row lg:items-stretch lg:space-x-8 lg:space-y-0">
+            <section class="flex flex-col w-full space-y-6 flex items-left justify-center ">
+                <p class="text-xl mt-4 text-slate-600 font-light">
+                    Wij voorzien bedrijven, ondernemers, het MKB en particulieren van administratief, boekhoudkundig, fiscaal en financieel advies. Ons team van professionals helpt u met al uw behoeften.
+                </p>
+                <p class="text-xl mt-4 text-slate-600 font-light">
+                    Ieder bedrijf is anders en vraagt om een andere aanpak. In welke branche u ook actief bent, wij kunnen de boekhouding verzorgen. We hebben een team van allemaal ervaren freelancers en we kunnen een nieuw perspectief op uw bedrijf bieden. Dit betekent dat je meer tijd hebt om te besteden aan de groei van uw bedrijf.
+                </p>
+                <p class="text-xl mt-4 text-slate-600 font-light">
+                    Wilt u snel gaan? Ga dan alleen, wilt u groeien? Ga dan samen is ons motto. Boekhouding voor starters, zzp'ers en particulieren in omgeving van 't Gooi.
+                </p>
+            </section>
+            <section class="flex flex-col w-full space-y-6 ">
+                <div class="py-6 md:order-1 hidden md:block">
+                    <!-- <Picture src={headerImage} alt="Vrouw met laptop" widths={[200, 400, 600]} aspectRatio="4:3" sizes="(max-width: 600px) 100vw, 620px" loading="eager" format="svg" /> -->
+                    <img src={headerImage} alt="">
+                </div>
+            </section>
+        </div>
+    </Container>
+    <PricingTables />
+    <USP />
+</Layout>
