@@ -3,26 +3,38 @@
 import { Icon } from "astro-icon";
 const features = [
     {
-        title: "Verlichting werkzaamheden",
+        title: "Administratie",
         description:
-            "Wij zorgen ervoor dat",
+            "Boekhouder in 't Gooi zorgt ervoor dat uw administratie in onze handen ligt. Hierbij hoeft u zich geen zorgen meer te maken en wordt alles gedaan naar uw wens.",
         icon: "bx:bxs-briefcase",
     },
     {
-        title: "Storingen",
+        title: "Belastingaangifte",
         description:
-            "Wij zorgen ervoor dat storingen opgelost worden",
+            "Meestal ontvangt u automatisch bericht dat u aangifte moet doen. Maar ook als u geen bericht krijgt, kan het zijn dat u aangifte moet doen.",
         icon: "bx:bxs-window-alt",
     },
     {
-        title: "Meterkast werkzaamheden",
-        description: "Meterkast is het hart van elektriciteit",
+        title: "Fiscaal advies",
+        description: "U weet altijd wat u van ons kunt verwachten en wat het gaat kosten.",
         icon: "bx:bxs-data",
     },
     {
-        title: "Inductiekookplaat werkzaamheden",
-        description: "Koken op Inductiekookplaat",
+        title: "Jaarrekening",
+        description: "Wij kennen uw financiële situatie en kunnen u duidelijk en helder adviseren bij belangrijke beslissingen.",
         icon: "bx:bxs-bot",
+    },
+    {
+        title: "Bedrijfsadvies",
+        description:
+            "Een goed begin is het halve werk! Wij begrijpen dat startende ondernemers meer behoefte hebben aan begeleiding en de mogelijkheid tot het stellen van vragen.",
+        icon: "bx:bxs-file-find",
+    },
+    {
+        title: "Lagere kosten",
+        description:
+            "Een besparing tot 40% op uw administratiekosten is mogelijk. Wij werken met vaste tarieven en u krijgt geen verassingen achteraf.",
+        icon: "bx:bxs-user",
     },
 ];
 ---
@@ -30,16 +42,16 @@ const features = [
 <div class="bg-darkblue py-14">
     <div class="container mx-auto px-4 max-w-5xl">
         <div class="text-center my-8 mb-20">
-            <h2 class="text-white text-2xl lg:text-3xl font-bold lg:tracking-tight">Met welke werkzaamheden kunnen wij jou helpen?</h2>
-        
+            <span class="text-white text-2xl lg:text-3xl font-bold lg:tracking-tight">Wat kunnen wij voor jou doen?</span>
+            <p class="text-white text-lg mt-4">Wij helpen ondernemers sinds 2010.</p>
         </div>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-4 gap-4">
             {
                 features.map((item) => (
                     <div class="flex gap-4 items-start text-center bg-white rounded-lg shadow-md py-20 px-7">
                         <div>
-                            {/*<Icon class="h-20 w-20 mx-auto" name={item.icon} />*/}
-                            <h3 class="font-bold text-xl mt-4">{item.title}</h3> <p class="mt-2 py-5">{item.description}</p>
+                            <Icon class="h-20 w-20 mx-auto" name={item.icon} />
+                            <span class="font-bold text-xl mt-4">{item.title}</span> <p class="mt-2 py-5">{item.description}</p>
                         </div>
                     </div>
                 ))

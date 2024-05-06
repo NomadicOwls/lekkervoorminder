@@ -1,5 +1,9 @@
 ---
+
+
 const {question, answer, index} = Astro.props
+
+
 ---
 
 <div>
@@ -10,7 +14,7 @@ const {question, answer, index} = Astro.props
             data-accordion-target={`#faq-item-body-${index}`}
             aria-expanded="false"
             aria-controls={`faq-item-body-${index}`}>
-            <span>{question}</span>
+            <h2 style="font-size:1rem; margin:0; font-weight:600;">{question}</h2>
             <svg
                 data-accordion-icon
                 class="w-6 h-6 rotate-180 shrink-0"
@@ -25,6 +29,6 @@ const {question, answer, index} = Astro.props
         </button>
     </div>
     <div id={`faq-item-body-${index}`} class="hidden" aria-labelledby={`faq-item-heading-${index}`}>
-        <p>{answer}</p>
+        <div class="px-5" set:html={answer}></div>
     </div>
 </div>

@@ -1,0 +1,80 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingTables from "@components/pricingTables.astro";
+import USP from "@components/usp.astro";
+import Sticky from "@components/sticky.astro";
+
+
+
+const { frontmatter } = Astro.props;
+---
+<style is:global>
+
+       
+
+    #bodycopy ul{
+        padding:0;
+    }    
+    #bodycopy li{
+        list-style-type: none;
+        padding:0;
+    }    
+
+    #bodycopy li:before {
+  content: "\2713";
+  color: green;
+  font-size: 22px;
+  margin-right: 5px;
+}
+
+    
+</style>
+
+<Layout title={frontmatter.title}>
+    <div class="bg-babyblue">
+        <Container>
+            <section class="flex flex-col max-w-5xl mx-auto py-28">
+                <div class="w-full md:w-1/2">
+                    <h1 class="font-bold text-4xl text-gray-800">
+                        {frontmatter.title}
+                    </h1>
+
+                    {
+                        frontmatter.description ? (
+                            <p>{frontmatter.description}</p>
+                        ) : (
+                            <ul class="benefits lead text-xl pt-4 list-unstyled">
+                                <li>✓ Volledige boekhouding al vanaf €69,- p/m!</li>
+                                <li>✓ Altijd een gratis kennismakingsgesprek</li>
+                                <li>✓ 24/7 Je administratie inzien</li>
+                                <li>✓ Ervaren boekhouders en belastingadviseurs</li>
+                                <li>✓ Online Boekhouding met de meest up-to-date softwarepakketten</li>
+                            </ul>
+                        )
+                    }
+                </div>
+            </section>
+        </Container>
+    </div>
+    <Container>
+        <div class="flex flex-col max-w-5xl mx-auto my-16 lg:flex-row lg:items-stretch lg:space-x-8 lg:space-y-0">
+            <!-- Prose has a random width. gotta check it  -->
+            <article id="bodycopy" class="prose w-full lg:w-1/2 space-y-6">
+                <slot />
+            </article>
+            <Sticky />
+        </div>
+    </Container>
+    <PricingTables />
+    <USP />
+</Layout>
+
+<script>
+    import {Carousel, initCarousels} from 'flowbite';
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+        initCarousels();
+    });
+</script>
