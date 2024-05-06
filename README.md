@@ -1,4 +1,4 @@
-# Boekhouder 't Gooi with Tailwind & Astro
+# Elektricien-Rotterdam with Tailwind & Astro
 
 Template wit Tailwind & Astro
 

@@ -1,5 +1,14 @@
 declare module 'astro:content' {
 	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+declare module 'astro:content' {
+	interface Render {
 		'.md': Promise<{
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
@@ -10,9 +19,7 @@ declare module 'astro:content' {
 
 declare module 'astro:content' {
 	export { z } from 'astro/zod';
-
-	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
-	export type CollectionEntry<C extends keyof AnyEntryMap> = Flatten<AnyEntryMap[C]>;
+	export type CollectionEntry<C extends keyof AnyEntryMap> = AnyEntryMap[C][keyof AnyEntryMap[C]];
 
 	// TODO: Remove this when having this fallback is no longer relevant. 2.3? 3.0? - erika, 2023-04-04
 	/**
@@ -53,9 +60,12 @@ declare module 'astro:content' {
 
 	type BaseSchemaWithoutEffects =
 		| import('astro/zod').AnyZodObject
-		| import('astro/zod').ZodUnion<[BaseSchemaWithoutEffects, ...BaseSchemaWithoutEffects[]]>
+		| import('astro/zod').ZodUnion<import('astro/zod').AnyZodObject[]>
 		| import('astro/zod').ZodDiscriminatedUnion<string, import('astro/zod').AnyZodObject[]>
-		| import('astro/zod').ZodIntersection<BaseSchemaWithoutEffects, BaseSchemaWithoutEffects>;
+		| import('astro/zod').ZodIntersection<
+				import('astro/zod').AnyZodObject,
+				import('astro/zod').AnyZodObject
+		  >;
 
 	type BaseSchema =
 		| BaseSchemaWithoutEffects
@@ -188,19 +198,21 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"how-to-become-frontend-master.md": {
-	id: "how-to-become-frontend-master.md";
-  slug: "how-to-become-frontend-master";
+"kitchensink.mdx": {
+	id: "kitchensink.mdx";
+  slug: "kitchensink";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 };
 
 	};
 
 	type DataEntryMap = {
-		
+		"_team": {
+};
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

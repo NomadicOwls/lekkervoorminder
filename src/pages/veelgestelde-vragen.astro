@@ -1,0 +1,84 @@
+---
+
+import Faq from "@components/faq/faq.astro";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+
+export const faqItems = [
+    {
+        question: "Hoe kan ik mijn energierekening verlagen?",
+        answer: `Je kunt je energierekening verlagen door energie-efficiënte apparaten te gebruiken, LED-verlichting te installeren, ongebruikte apparaten uit te schakelen en ervoor te zorgen dat je elektrische installatie goed is geïsoleerd.`
+    },
+    {
+        question: "Wat moet ik doen bij een stroomstoring?",
+        answer: `Controleer eerst of de stroomstoring beperkt is tot jouw woning of dat het een probleem is in de hele buurt. Schakel daarna de zekeringen of automatische schakelaars in je elektrische paneel uit en vervolgens weer in. Als dit het probleem niet oplost, neem dan contact op met een professionele elektricien.`
+    },
+    {
+        question: "Hoe kan ik stopcontacten of schakelaars vervangen?",
+        answer: `Schakel altijd de stroom uit voordat je begint met het vervangen van stopcontacten of schakelaars. Verwijder de afdekplaat en de bevestigingsschroeven, trek voorzichtig het oude stopcontact of de oude schakelaar uit de wand en sluit de draden aan op de juiste aansluitpunten van het nieuwe stopcontact of de nieuwe schakelaar. Zorg ervoor dat alles stevig is vastgedraaid en plaats de afdekplaat terug.`
+    },
+    {
+        question: "Wat zijn de juiste elektriciteitsdradenkleuren en -codes?",
+        answer: `In veel landen zijn de standaard elektriciteitsdradenkleuren: zwart (fase/actief), wit (neutraal), en groen of geelgroen (aarde). Het is belangrijk om de lokale elektrische codes te raadplegen, omdat deze kunnen verschillen per regio.`
+    }
+    ,
+    {
+        question: "Wat zijn de juiste elektriciteitsdradenkleuren en -codes?",
+        answer: `In veel landen zijn de standaard elektriciteitsdradenkleuren: zwart (fase/actief), wit (neutraal), en groen of geelgroen (aarde). Het is belangrijk om de lokale elektrische codes te raadplegen, omdat deze kunnen verschillen per regio.`
+    }
+    ,
+    {
+        question: "Hoe kan ik mijn woning beveiligen met betrekking tot elektriciteit?",
+        answer: `Om je woning te beveiligen, installeer je rookmelders op elke verdieping, gebruik je aardlekschakelaars om de veiligheid te verbeteren, laat je periodieke elektrische inspecties uitvoeren door een gekwalificeerde professional en vermijd je overbelasting van stopcontacten en verlengsnoeren.`
+    }
+    ,
+    {
+        question: "Waarom springt mijn zekering steeds?",
+        answer: `Een zekering kan steeds springen door overbelasting van het circuit, kortsluiting of een defect in een apparaat. Het kan nodig zijn om het elektrische circuit te herzien en mogelijk extra circuits aan te leggen of een professionele elektricien te raadplegen voor een grondigere diagnose.`
+    }
+    ,
+    {
+        question: "Mag ik zelf elektrische reparaties uitvoeren?",
+        answer: `Kleine reparaties zoals het vervangen van een lamp of een stopcontact kunnen meestal door een huiseigenaar worden uitgevoerd, zolang de juiste veiligheidsmaatregelen worden genomen. Voor complexere elektrische taken is het echter raadzaam om een professionele elektricien in omgeving Rotterdam in te schakelen om risico's te minimaliseren.`
+    }
+
+];
+---
+
+<Layout title="Veelgestelde vragen">
+
+  <div class="bg-babyblue flex h-96">
+        <div class="m-auto text-center">
+            <h1 class="font-bold text-6xl text-gray-800">
+                Veelgestelde vragen
+                </h2>
+                <p class="text-lg font-light mt-4">
+                    Veelgestelde vragen aan een elektricien
+                </p>
+        </div>
+    </div>
+  <Container>
+    
+
+    <div class="gap-10 mx-auto max-w-4xl mt-16">
+      <div>
+        <h2 class="font-medium text-2xl text-gray-800">Elektricien Rotterdam</h2>
+        <p class="text-lg leading-relaxed text-slate-500 mt-3">
+          Hier kun je de meest veelgestelde vragen en doe het jezelf tips vinden
+        </p>
+        <Faq faqItems={faqItems}/>
+      <div>
+    
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+ 
+
+
+
+
+
