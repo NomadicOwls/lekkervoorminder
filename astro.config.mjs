@@ -5,7 +5,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://elektricieninrotterdam.nl",
+  site: "https://lekkervoorminder.nl",
   trailingSlash: 'never',
   integrations: [tailwind(), image({
     serviceEntryPoint: "@astrojs/image/sharp"

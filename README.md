@@ -1,4 +1,4 @@
-# Elektricien-Rotterdam with Tailwind & Astro
+# Lekkervoorminder
 
-Template wit Tailwind & Astro
+Template wit Bootstrap & Astro
 
