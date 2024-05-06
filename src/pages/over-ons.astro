@@ -1,39 +1,35 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import headerImage from "assets/woman-laptop.svg";
+import headerImage from "assets/elektricien-hero.svg";
 import Sectionhead from "@components/sectionhead.astro";
 import PricingTables from "@components/pricingTables.astro";
 import USP from "@components/usp.astro";
+import Modal from "@components/modal.astro";
+
+
 ---
 <Layout title="About">
-    <div class="bg-babyblue flex h-96">
-        <div class="m-auto text-center">
-            <h1 class="font-bold text-6xl text-gray-800">
-                Over ons
-                </h1>
-                <p class="text-lg font-light">
-                    Wij maken ondernemen weer makkelijk
-                </p>
-        </div>
-    </div>
+
     <Container>
         <div class="flex flex-col max-w-5xl mx-auto my-16 lg:flex-row lg:items-stretch lg:space-x-8 lg:space-y-0">
             <section class="flex flex-col w-full space-y-6 flex items-left justify-center ">
+                <h1 class="font-semibold text-gray-900 text-4xl mb-10">Over ons</h1>
                 <p class="text-xl mt-4 text-slate-600 font-light">
-                    Wij voorzien bedrijven, ondernemers, het MKB en particulieren van administratief, boekhoudkundig, fiscaal en financieel advies. Ons team van professionals helpt u met al uw behoeften.
+
+                    Welkom bij Elektricien in Rotterdam, uw betrouwbare partner in elektrische diensten. Sinds onze oprichting hebben we een solide reputatie opgebouwd als een van de meest toonaangevende elektriciens in regio Zuid-Holland.
                 </p>
                 <p class="text-xl mt-4 text-slate-600 font-light">
-                    Ieder bedrijf is anders en vraagt om een andere aanpak. In welke branche u ook actief bent, wij kunnen de boekhouding verzorgen. We hebben een team van allemaal ervaren freelancers en we kunnen een nieuw perspectief op uw bedrijf bieden. Dit betekent dat je meer tijd hebt om te besteden aan de groei van uw bedrijf.
+                    Ons team van ervaren elektriciens staat klaar om u te helpen bij al uw elektrische behoeften, of u nu een particuliere klant of een bedrijf bent. We bieden een breed scala aan diensten, waaronder installatie, reparatie, onderhoud en inspectie van elektrische systemen. We zijn toegewijd om onze klanten de hoogste kwaliteit en meest betrouwbare diensten te bieden, tegen concurrerende prijzen.
                 </p>
                 <p class="text-xl mt-4 text-slate-600 font-light">
-                    Wilt u snel gaan? Ga dan alleen, wilt u groeien? Ga dan samen is ons motto. Boekhouding voor starters, zzp'ers en particulieren in omgeving van 't Gooi.
+                    We zijn er trots op dat we werken met de nieuwste technologieën en methoden om de efficiëntie en veiligheid van uw elektrische systemen te verbeteren. Onze elektriciens zijn volledig gecertificeerd en hebben de nodige licenties om hun werk uit te voeren. We nemen elke klus serieus en werken hard om ervoor te zorgen dat elk project op tijd en binnen budget wordt voltooid.
                 </p>
             </section>
             <section class="flex flex-col w-full space-y-6 ">
                 <div class="py-6 md:order-1 hidden md:block">
                     <!-- <Picture src={headerImage} alt="Vrouw met laptop" widths={[200, 400, 600]} aspectRatio="4:3" sizes="(max-width: 600px) 100vw, 620px" loading="eager" format="svg" /> -->
-                    <img src={headerImage} alt="">
+                    <img src={headerImage} alt=""> 
                 </div>
             </section>
         </div>

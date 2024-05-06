@@ -1,0 +1,47 @@
+---
+import Sticky from "@components/sticky.astro";
+---
+
+<div id="modal" class="fixed z-10 inset-0 overflow-y-auto hidden">
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <div class="flex justify-end">
+        <button id="closeModal" class="text-gray-400 hover:text-gray-500">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="mt-4">
+        <Sticky />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script is:inline>
+
+const modalButton = document.querySelector('#modalButton');
+const modal = document.querySelector('#modal');
+const closeModal = document.querySelector('#closeModal');
+
+modalButton.addEventListener('click', () => {
+  modal.classList.add('visible');
+  modal.classList.remove('hidden');
+});
+
+closeModal.addEventListener('click', () => {
+  modal.classList.add('hidden');
+  modal.classList.remove('visible');
+});
+
+
+
+</script>

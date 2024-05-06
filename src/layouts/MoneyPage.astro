@@ -1,0 +1,85 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingTables from "@components/pricingTables.astro";
+import Sticky from "@components/sticky.astro";
+import Modal from "@components/modal.astro";
+
+
+
+const { frontmatter } = Astro.props;
+---
+<style is:global>
+
+    #bodycopy{
+        
+    }
+
+    
+</style>
+
+<Layout title={frontmatter.title}>
+    <div class="bg-lightblue">
+        <Container>
+            <section class="flex flex-col max-w-5xl mx-auto py-28">
+                <div class="w-full md:w-1/2">
+                    <h1 class="font-bold text-4xl text-gray-800">
+                        {frontmatter.title}
+                    </h1>
+
+                    {
+                        frontmatter.description ? (
+                            <p>{frontmatter.description}</p>
+                        ) : (
+                            <p>"Veilige en betrouwbare {frontmatter.title} in omgeving Rotterdam - Jouw partner in stroom en techniek"
+
+</p>
+                        )
+                    }
+                </div>
+            </section>
+        </Container>
+    </div>
+    <Container>
+        <div class="flex flex-col max-w-5xl mx-auto my-16 lg:flex-row lg:items-stretch lg:space-x-8 lg:space-y-0">
+            <article id="bodycopy" class="prose w-full md:w-1/2 space-y-6">
+                <slot />
+            </article>
+            <section class="flex flex-col mt-10 md:mt-0 w-full md:w-1/2 md:p-12 space-y-6 ">
+                <aside class="md:sticky md:top-5 md:-mt-15vh bg-white shadow rounded-xl px-10 py-10" style="">
+            <Sticky />
+                </aside>
+            </section>
+        </div>
+    </Container>
+    <PricingTables />
+</Layout>
+
+<script>
+    import {Carousel, initCarousels} from 'flowbite';
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+        initCarousels();
+    });
+</script>
+
+<script is:inline>
+
+const modalButton = document.querySelector('#modalButton');
+const modal = document.querySelector('#modal');
+const closeModal = document.querySelector('#closeModal');
+
+modalButton.addEventListener('click', () => {
+  modal.classList.add('visible');
+  modal.classList.remove('hidden');
+});
+
+closeModal.addEventListener('click', () => {
+  modal.classList.add('hidden');
+  modal.classList.remove('visible');
+});
+
+
+
+</script>

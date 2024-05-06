@@ -2,15 +2,19 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
+import "@fontsource/inter/variable.css";
 import Gtm from "@components/gtm.astro";
 
-import "@fontsource/inter/variable.css";
 
 export interface Props {
   title: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+function removeTrailingSlash(str: string) {
+  return str.replace(/\/+$/, '');
+}
+
+const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site).toString());
 
 const resolvedImageWithDomain = new URL(
   "/opengraph.jpg",
@@ -21,8 +25,8 @@ const { title } = Astro.props;
 
 
 const makeTitle = title
-  ? title + " | " + "Lekker voor minder"
-  : "Uit eten met korting";
+  ? title + " | " + "Elektricien-Rotterdam"
+  : "Stroom Storingen oplossen, inductiekookplaat aanleggen, en meer";
 ---
 
 <!DOCTYPE html>
@@ -30,39 +34,30 @@ const makeTitle = title
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Lekker voor Minder"
+      description="Elektricien in Rotterdam, Schiedam, Westland en omgeving"
       canonical={canonicalURL}
-      }}
     />
-
-      <!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> -->
-  <link href="src/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="src/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="src/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="src/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="src/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="src/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="src/assets/css/style.css" rel="stylesheet">
-
+    <Gtm />
 
   </head>
   <body>
     <Navbar />
     <slot />
     <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
   </body>
 </html>
