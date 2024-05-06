@@ -11,31 +11,20 @@ const menuitems = [
     path: "/",
   },
   {
-    title: "Diensten",
-    path: "diensten",
+    title: "Laatst toegevoegd",
+    path: "/laatst-toegevoegd",
+  },
+  {
+    title: "Provincie",
+    path: "Provincie",
     children: [
-      { title: "Stroomstoring oplossen", path: "/diensten/stroomstoring-oplossen" },
-      { title: "Inductiekookplaat aansluiten", path: "/diensten/inductiekookplaat-aansluiten" },
-      { title: "Groepenkast uitbreiden", path: "/diensten/groepenkast-uitbreiden" },
-      { title: "Perilex aansluiten", path: "/diensten/perilex-aansluiten" },
-      { title: "Stopcontact werkzaamheden", path: "/diensten/stopcontact-werkzaamheden" },
+      { title: "Noord-brabant", path: "/provincie/noord-brabant" },
+     
     ],
   },
   {
-    title: "Werkgebied",
-    path: "Werkgebied",
-    children: [
-      { title: "Elektricien in Rotterdam", path: "/werkgebied/elektricien-rotterdam" },
-      { title: "Elektricien in Schiedam", path: "/werkgebied/elektricien-schiedam" },
-      { title: "Elektricien in Delft", path: "/werkgebied/elektricien-delft" },
-      { title: "Elektricien in Den-Haag", path: "/werkgebied/elektricien-den-haag" },
-      { title: "Elektricien in Westland", path: "/werkgebied/elektricien-westland" },
-      { title: "Elektricien in Spijkenisse", path: "/werkgebied/elektricien-spijkenisse" },
-    ],
-  },
-  {
-    title: "Over ons",
-    path: "/over-ons",
+    title: "Partners",
+    path: "/partners",
   },
 
   //   {
@@ -54,49 +43,33 @@ const menuitems = [
 ---
 
 <Container>
-  <header class="flex flex-col lg:flex-row justify-between items-right my-5 max-w-7xl mx-auto">
-    <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg">
-            <img src="/img/logos/logo.svg" class="h-12 w-full inline-block"  alt="Elektricien in Rotterdam">
-        </a>
-        <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
-        </div>
-      </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 z-30">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
-          {
-            menuitems.map((item, index) => (
-              <>
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
+ <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-                {!item.children && (
-                  <li>
-                    <a
-                      href={item.path}
-                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
-                      {item.title}
-                    </a>
-                  </li>
-                )}
-              </>
-            ))
-          }
+  
+      <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="/" class="logo me-auto me-lg-0">  <img src="/img/logos/logo.png" class="h-12 w-full inline-block"  alt="Elektricien in Rotterdam"></a>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Laatst toegevoegd</a></li>
+          <li class="dropdown"><a href="#"><span>Provincie</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown"><a href="provincie/noord-brabant"><span>Noord-Brabant</span></a>
+              </li> 
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#specials">Partners</a></li>
+          <li><a class="nav-link scrollto" href="#blog">Blog</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
-      </MenuItems>
-    </Astronav>
-     <div>
-      <div class="hidden lg:flex items-center gap-4">
-        <Link id="modalButton" href="#" size="md">Gratis offerte aanvragen</Link>
-      </div>
-    </div> 
-  </header>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex"  style="border-radius: 30px; background-color: #9B5DE5;">Bekijk deals</a>
+
+    </div>
+  </header><!-- End Header -->
 </Container>
 

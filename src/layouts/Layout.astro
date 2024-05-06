@@ -25,8 +25,8 @@ const { title } = Astro.props;
 
 
 const makeTitle = title
-  ? title + " | " + "Elektricien-Rotterdam"
-  : "Stroom Storingen oplossen, inductiekookplaat aanleggen, en meer";
+  ? title + " | " + "Uit eten met korting in heel Nederland"
+  : "Goedkoper uit eten in Nederland";
 ---
 
 <!DOCTYPE html>
@@ -37,12 +37,29 @@ const makeTitle = title
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+  
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  
+
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Elektricien in Rotterdam, Schiedam, Westland en omgeving"
+      description="Uit eten met korting in heel Nederland"
       canonical={canonicalURL}
     />
     <Gtm />
