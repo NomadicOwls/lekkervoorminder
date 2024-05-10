@@ -25,8 +25,8 @@ const { title } = Astro.props;
 
 
 const makeTitle = title
-  ? title + " | " + "Uit eten met korting in heel Nederland"
-  : "Goedkoper uit eten in Nederland";
+  ? title + " | " + "Ontdek jouw ideale culinaire ervaring in Nederland! Verken de beste beoordelingen, vind voordelige restaurantdeals en geniet van verfijnde smaken."
+  : "";
 ---
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Uit eten met korting in heel Nederland"
+      description="Ontdek jouw ideale culinaire ervaring in Nederland! Verken de beste beoordelingen, vind voordelige restaurantdeals en geniet van verfijnde smaken."
       canonical={canonicalURL}
     />
     <Gtm />
