@@ -1,0 +1,870 @@
+---
+import { SEO } from "astro-seo";
+export interface Props {
+title: string;
+}
+function removeTrailingSlash(str: string) {
+return str.replace(/\/+$/, '');
+}
+const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site).toString());
+const resolvedImageWithDomain = new URL(
+"/opengraph.jpg",
+Astro.site
+).toString();
+const { title } = Astro.props;
+const makeTitle = "Yume Sushi & Grill Herpen | Geniet onbeperkt van de beste all you can eat sushi bij Yume in Herpen! ";
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <SEO title={makeTitle} description="Geniet onbeperkt van de beste sushi bij Yume in Herpen! Bezoek ons all-you-can-eat sushi restaurant voor een heerlijke culinaire ervaring met verse ingrediënten en authentieke smaken. Perfect voor familie-uitjes en vriendenbijeenkomsten. Reserveer nu!" canonical={canonicalURL} />
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+    ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '932633251977386');
+    fbq('track', 'PageView');
+    </script><noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=932633251977386&ev=PageView&noscript=1" /></noscript><!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+        </div>
+    </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-cente">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="/" class="logo me-auto me-lg-0"><img src="/img/logos/logo-yume.png" alt="" class="img-fluid"></a>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#all-you-can-eat">All you can eat</a></li>
+                    <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+                    <li><a class="nav-link scrollto" href="#reserveren">Reserveren</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+            <a href="#reserveren" class="book-a-table-btn scrollto d-none d-lg-flex">Direct reserveren</a>
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative text-center text-lg-start">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>All you can eat <span>Yume </span>Herpen</h1>
+                    <h2>25% korting voor elke 2e persoon</h2>
+                    <div class="btns">
+                        <!-- <a href="https://take.app/yumeherpen" class="btn-menu animated fadeInUp scrollto" target="_blank">Bestellen</a> -->
+                        <a href="#reserveren" class="btn-book animated fadeInUp scrollto">Reserveren</a>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative">
+          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+        </div> -->
+            </div>
+        </div>
+    </section><!-- End Hero -->
+    <main id="main">
+        <!-- ======= About Section ======= -->
+        <section id="all-you-can-eat" class="bg-white section-padding">
+            <div class="container">
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-sm-7 py-5 pl-md-0 pl-4">
+                            <div class="heading-section pl-lg-5 ml-md-5">
+                                <h2 class="section-title-h2">
+                                    Geniet met Korting: Reserveer Nu bij Yume Herpen! Sushi, Grill en Tapas.
+                                </h2>
+                                <br />
+                            </div>
+                            <div class="pl-lg-5 ml-md-5">
+                                <p>Welkom bij Yume Herpen, uw ultieme bestemming voor een all-you-can-eat sushi-ervaring in het prachtige Herpen, Noord-Brabant. Gelegen op de gezellige Camping de Brug, bieden wij een uitgebreid assortiment van meer dan 100 verschillende gerechten, waaronder de meest verfijnde sushi, heerlijke grillgerechten en verleidelijke tapas.</p>
+                                <br />
+                                <p>
+                                    Bij Yume draait alles om de ervaring van onbeperkt samen genieten in een warme en ontspannen sfeer. Of u nu komt om te genieten van een smakelijke maaltijd met vrienden, familie of uw geliefde, ons restaurant biedt de perfecte setting voor elke gelegenheid.
+                                </p>
+                                <br />
+                                <p>
+                                    Onze all-you-can-eat formule stelt u in staat om naar hartelust te genieten van al uw favoriete gerechten, zonder beperkingen. Van klassieke sushi rolls tot creatieve fusiongerechten, onze menukaart biedt voor elk wat wils. En vergeet vooral onze heerlijke grillgerechten niet, bereid met de meest verse ingrediënten en perfect gegrild tot in de perfectie.
+                                </p>
+                                <br />
+                                <p>
+                                    Bij Yume geloven we in het leveren van een onvergetelijke culinaire ervaring voor al onze gasten. Ons team van ervaren koks zet zich in om elke maaltijd tot in de puntjes te verzorgen, met oog voor kwaliteit en smaak. Bovendien streven we ernaar om een gastvrije en gastvrije omgeving te creëren waar u zich direct thuis zult voelen.
+                                </p>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="col-sm-5 img-bg align-items-center justify-content-center justify-content-md-end img-2">
+                            <img class="img-fluid img-cover" src="/assets/img/promo/final-qr.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- menu -->
+        <!--<div id="menu" class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center
+                ">
+                        <div class="page-section">
+                            <h2 class="section-title-h2">Yume Herpen Menu</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                   
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb40">
+                        <div class="menu-block">
+                            <h3 class="menu-title"></h3>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="/assets/img/menu/sake.png" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Sake</a></h5>
+                                            <span class="dish-meta">Zalm</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Maguro</a></h5>
+                                            <span class="dish-meta">Tonijn </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Suzuki</a> </h5>
+                                            <span class="dish-meta">Zeebaars</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Tamago</a> </h5>
+                                            <span class="dish-meta">Zoete omelet</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Ebi</a> </h5>
+                                            <span class="dish-meta">Gerookte garnaal</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Ahirue</a> </h5>
+                                            <span class="dish-meta">Eendfilet</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Kani</a> </h5>
+                                            <span class="dish-meta">Krab</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Unagi</a> </h5>
+                                            <span class="dish-meta">Gegrilde paling</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Hokkigai</a> </h5>
+                                            <span class="dish-meta">Surfmossel</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Inari</a> </h5>
+                                            <span class="dish-meta">Gebakken Tofu</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Gegrilde Tuna</a> </h5>
+                                            <span class="dish-meta">Geflambeerde Tonijn</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Sake Cheese</a> </h5>
+                                            <span class="dish-meta">Geflambeerde Kaas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Gegrilde Sake</a> </h5>
+                                            <span class="dish-meta">Geflambeerde Zalm</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+            
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb40">
+                        <div class="menu-block">
+                            <h3 class="menu-title"></h3>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Sake Maki</a></h5>
+                                            <span class="dish-meta"> Zalmrol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Tekka Maki</a></h5>
+                                            <span class="dish-meta">Tonijnrol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Kappa Maki</a></h5>
+                                            <span class="dish-meta">Komkommerrol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Kani Maki</a></h5>
+                                            <span class="dish-meta">Krabrol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Avocado Maki</a></h5>
+                                            <span class="dish-meta">Avocado</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">California Maki</a></h5>
+                                            <span class="dish-meta">Avocado-krab rol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Wasabi Sake Maki</a></h5>
+                                            <span class="dish-meta">Avocado-zalm rol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Spicy Sake Maki</a></h5>
+                                            <span class="dish-meta">Pittige zalm rol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Spicy Tuna Maki</a></h5>
+                                            <span class="dish-meta">Pittige tonijn rol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Crispy roll</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Cheese roll</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Banaan Maki</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Unagi Maki</a></h5>
+                                            <span class="dish-meta">Paling rol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Ebi Maki</a></h5>
+                                            <span class="dish-meta">Garnaal rol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Tori Maki</a></h5>
+                                            <span class="dish-meta">Kip rol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Creamcheese sake maki</a></h5>
+                                            <span class="dish-meta">Roomkaas zalm rol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Crispy ebi maki</a></h5>
+                                            <span class="dish-meta">Garnaal rol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Ebi avocado maki</a></h5>
+                                            <span class="dish-meta">Garnaal avocado</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Mango sake maki</a></h5>
+                                            <span class="dish-meta">Mango zalm rol</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb40">
+                        <div class="menu-block">
+                            <h3 class="menu-title"></h3>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Gomaburu</a></h5>
+                                            <span class="dish-meta">Sesamballetjes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Yakitori</a></h5>
+                                            <span class="dish-meta">Kipspies
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Chicken meatballs</a> </h5>
+                                            <span class="dish-meta"> Kipballetjes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Togarashi Ebi</a> </h5>
+                                            <span class="dish-meta">Spicy garnalen</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Ika fried</a> </h5>
+                                            <span class="dish-meta">Inktvis</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Gebakken garnalen</a> </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Tori Teriyaki</a> </h5>
+                                            <span class="dish-meta">Gebakken kip</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="dish-img"><a href="#"><img src="http://via.placeholder.com/70x70" alt="" class="img-circle"></a></div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <div class="dish-content">
+                                            <h5 class="dish-title"><a href="#">Beef teriyaki</a> </h5>
+                                            <span class="dish-meta">Gesneden biefstuk</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+
+                  
+                    <!-- ======= Gallery Section ======= -->
+                    <section id="gallery" class="gallery">
+                        <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+                            <div class="row g-0">
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="gallery-item">
+                                        <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                            <img src="/assets/img/gallery/gallery-1.avif" alt="" class="img-fluid" height="400">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="gallery-item">
+                                        <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                            <img src="/assets/img/gallery/gallery-2.avif" alt="" class="img-fluid" height="400">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="gallery-item">
+                                        <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                            <img src="/assets/img/gallery/gallery-3.avif" alt="" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="gallery-item">
+                                        <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                            <img src="/assets/img/gallery/gallery-4.avif" alt="" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="gallery-item">
+                                        <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                            <img src="/assets/img/gallery/gallery-5.avif" alt="" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="gallery-item">
+                                        <a href="/assets/img/gallery/gallery-6.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                                            <img src="/assets/img/gallery/gallery-6.webp" alt="" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="gallery-item">
+                                        <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                            <img src="https://storage.pubble.nl/d1f2c735/content/2024/3/08bccfe3-c17a-43e4-b528-53a73fb6fe19_thumb1440.jpg" alt="" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="gallery-item">
+                                        <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                            <img src="https://storage.pubble.nl/d1f2c735/content/2024/3/58a9a79c-04c9-4bfc-9c86-5818374a91b9_thumb1440.webp" alt="" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section> <!-- End Gallery Section -->
+                    <!-- ======= Book A Table Section ======= -->
+                    <section id="reserveren" class="book-a-table">
+                        <div class="container">
+                                         <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center
+                ">
+                        <div class="page-section">
+                            <h2 class="section-title-h2">Reserveer hier en ontvang 25% korting op elke 2e persoon</h2>
+                            <span>Volwassenen 2,5 uur diner &euro; 35,- p.p </span>
+                        </div>
+                    </div>
+                </div>
+                            <iframe src="https://app.tableo.com/widget/yume-sushi-grill-tapas-herpen-netherlands/?bgColor=%23ffffff&textColor=%23000000&googleFont=&fontSize=14&cornerStyle=none&textAlignment=left&formControlBgColor=%23ffffff&formControlColor=%23000000&formControlBorderColor=%23444444&formControlBorderShadow=6&formControlBorderWidth=1&formControlBorderOpacity=0.1&buttonBgColor=%23000000&buttonTextColor=%23ffffff" width="100%" height=" 100%" style="border:none;min-height:700px"></iframe>
+                        </div>
+                    </section><!-- End Book A Table Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-info">
+                            <img src="/img/logos/logo-yume.png" width="200" class="img-fluid">
+                            <div class="social-links mt-3">
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">All you can eat</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Menu</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Cafetaria</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Gallerij</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Openingstijden</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Maandag: Gesloten</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Dinsdag: 16.00 - 22.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Woensdag: 16.00 - 22.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Donderdag: 16.00 - 22.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Vrijdag: 16.00 - 22.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Zaterdag: 16.00 - 22.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Zondag: 16.00 - 22.00</a></li>
+                        </ul>
+                    </div>
+                     <div class="col-lg-3 col-md-6 footer-newsletter">
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.5750081832066!2d5.641926577308222!3d51.777376171876156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c703d67a43b92d%3A0x220cc50031a09b17!2sYume%20Sushi%2C%20Grill%20%26%20Tapas%20Herpen!5e0!3m2!1snl!2snl!4v1715352828008!5m2!1snl!2snl" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>NomadicOwls</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <style is:inline>
+    .menu-block {
+        margin-bottom: 30px;
+    }
+
+    .menu-title {
+        border-bottom: 3px solid #e0e6e3;
+        margin-bottom: 36px;
+        padding-bottom: 10px;
+    }
+
+    .menu-content {
+        border-bottom: 1px solid #e0e6e3;
+        margin-bottom: 30px;
+    }
+
+    .dish-img {}
+
+    .dish-content {
+        margin-top: 12px;
+        margin-bottom: 40px;
+    }
+
+    .dish-meta {
+        font-size: 12px;
+        text-transform: uppercase;
+        display: block;
+        width: 210px;
+        line-height: 1.7;
+    }
+
+    .dish-title {
+        margin-bottom: 6px;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .well-block .dish-meta {
+        width: 100%;
+    }
+    </style>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <!-- <script src="assets/vendor/aos/aos.js"></script> -->
+    <script is:inline src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script is:inline src="/assets/js/main.js"></script>
+</body>
+
+</html>
