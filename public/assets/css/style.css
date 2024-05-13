@@ -1615,6 +1615,7 @@ img{
   left: 0;
   top: 10px;
   font-size: 14px;
+  z-index: 999;
 }
 .blog-grid .blog-info {
   box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
