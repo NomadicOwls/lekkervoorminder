@@ -447,6 +447,36 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
+
+
+/*------ Reservation form ------*/
+
+.form-label {
+  font-weight: 500;
+  color: #07074d;
+}
+
+.form-control {
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.form-control:focus {
+  border-color: #6a64f1;
+  box-shadow: 0 0 8px rgba(106, 100, 241, .1);
+}
+
+.btn-primary {
+  background-color: #6a64f1;
+  border-color: #6a64f1;
+}
+
+.btn-primary:hover {
+  background-color: #5a54d1;
+  border-color: #5a54d1;
+}
+
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/

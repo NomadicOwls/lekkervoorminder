@@ -1,0 +1,322 @@
+---
+import { SEO } from "astro-seo";
+export interface Props {
+title: string;
+}
+function removeTrailingSlash(str: string) {
+return str.replace(/\/+$/, '');
+}
+const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site).toString());
+const resolvedImageWithDomain = new URL(
+"/opengraph.jpg",
+Astro.site
+).toString();
+const { title } = Astro.props;
+const makeTitle = "Het wapen van Westerhoven | Reserveer en ontvang een kopje thee of koffie van het huis";
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <SEO title={makeTitle} description="Het wapen van Westerhoven" canonical={canonicalURL} />
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '932633251977386');
+    fbq('track', 'PageView');
+    </script><noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=932633251977386&ev=PageView&noscript=1" /></noscript><!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+        </div>
+    </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-cente">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="/" class="logo me-auto me-lg-0"><img src="https://hetwapenvanwesterhoven.nl/wp-content/themes/yootheme/cache/5c/logo-wapenvanwesterhoven-5c3e701f.png" alt="" class="img-fluid"></a>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#bourgondisch-eten">Bourgondisch eten</a></li>
+                    <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+                    <li><a class="nav-link scrollto" href="#reserveren">Reserveren</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+            <a href="#reserveren" class="book-a-table-btn scrollto d-none d-lg-flex">Direct reserveren</a>
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center" style="background: url(https://assets.plaece.nl/thumb/orP8E2iedhiqep59v7YUIPVQziBnbVj7QlSiURvRPb0/resizing_type:fit/width:1900/height:0/gravity:sm/enlarge:0/aHR0cHM6Ly9hc3NldHMucGxhZWNlLm5sL29kcC12aXNpdGJyYWJhbnQvaW1hZ2UvMzMzNmUyM2NiMmUxYjNhNjUyMjIyZTI2ODQ4YWFiMDk0NjMzODkyOS5qcGVn.webp) no-repeat center center;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover; 
+            -o-background-size: cover;">
+        <div class="container position-relative text-center text-lg-start">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>Heerlijk bourgondisch eten<br /><span>Het wapen van Westerhoven</span></h1>
+                    <h2>Reserveer en geniet van een kopje thee of koffie na de maaltijd van het huis</h2>
+                    <div class="btns">
+                        <!-- <a href="https://take.app/yumeherpen" class="btn-menu animated fadeInUp scrollto" target="_blank">Bestellen</a> -->
+                        <a href="#reserveren" class="btn-book animated fadeInUp scrollto">Reserveren</a>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative">
+          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+        </div> -->
+            </div>
+        </div>
+    </section><!-- End Hero -->
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 py-5 pl-md-0 pl-4">
+                    <div class="heading-section pl-lg-5 ml-md-5">
+                        <h2 id="bourgondisch-eten" class="section-title-h2">
+                            Geniet van een kopje thee of koffie na de maaltijd: Reserveer Nu bij het wapen van Westerhoven!
+                        </h2>
+                        <br />
+                    </div>
+                    <div class="pl-lg-5 ml-md-5">
+                        <p>In het hart van Noord-Brabant verwelkomt Het Wapen van Westerhoven u voor een authentieke Bourgondische eetervaring. Ons restaurant is de ideale plek voor liefhebbers van de rijke smaken en gezelligheid die de Nederlandse keuken te bieden heeft.</p>
+                        <br />
+                        <p>
+                            Bij Het Wapen van Westerhoven draait alles om het vieren van het goede leven met goed eten. Onze menukaart is rijkelijk gevuld met klassieke gerechten die met liefde en aandacht zijn bereid. Van sappige steaks tot traditionele streekgerechten, elk gerecht wordt gemaakt met de beste lokale ingrediënten en biedt u een smaak van echte Nederlandse gastvrijheid.
+                        </p>
+                        <br />
+                        <p>
+                            Beëindig uw maaltijd op een smaakvolle noot met een gratis kopje koffie of thee, exclusief voor gasten die via onze website reserveren. Het is onze manier om u te bedanken en uw eetervaring bij ons extra speciaal te maken.
+                        </p>
+                        <br />
+                        <p>
+                            Reserveer nu uw tafel bij Het Wapen van Westerhoven en laat ons u onderdompelen in een wereld van culinaire genoegens, waar elk bezoek een gelegenheid wordt om te genieten en te vieren.
+                        </p>
+                        <br />
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="pt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <h2 id="reserveren" class="section-title-h2">
+                                    Reserveren
+                                </h2><br />
+                                <form action="" method="POST">
+                                    <div class="row mb-3">
+                                        <div class="col-sm-6">
+                                            <label for="fName" class="form-label" style="font-weight: 500; color: #07074d;">Voornaam</label>
+                                            <input type="text" name="fName" id="fName" class="form-control" style="border-radius: 6px; border: 1px solid #e0e0e0;" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label for="lName" class="form-label" style="font-weight: 500; color: #07074d;">Achternaam</label>
+                                            <input type="text" name="lName" id="lName" class="form-control" style="border-radius: 6px; border: 1px solid #e0e0e0;" />
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="guest" class="form-label" style="font-weight: 500; color: #07074d;">
+                                            Met hoeveel personen komt u?
+                                        </label>
+                                        <input type="number" name="guest" id="guest" placeholder="5" class="form-control" style="border-radius: 6px; border: 1px solid #e0e0e0;" />
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-6">
+                                            <label for="date" class="form-label" style="font-weight: 500; color: #07074d;">Datum</label>
+                                            <input type="date" name="date" id="date" class="form-control" style="border-radius: 6px; border: 1px solid #e0e0e0;" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label for="time" class="form-label" style="font-weight: 500; color: #07074d;">Tijd</label>
+                                            <input type="time" name="time" id="time" class="form-control" style="border-radius: 6px; border: 1px solid #e0e0e0;" />
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="questions" class="form-label" style="font-weight: 500; color: #07074d;">
+                                            Andere vragen?
+                                        </label>
+                                        <textarea name="questions" id="questions" rows="5" class="form-control" style="border-radius: 6px; border: 1px solid #e0e0e0;"></textarea>
+                                    </div>
+                                    <button type="submit" class="book-a-table-btn scrollto d-none d-lg-flex" style="background-color: #cda45e; border-color: #cda45e;">Reserveren</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <!-- ======= Gallery Section ======= -->
+        <section id="gallery" class="gallery">
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-0">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://hetwapenvanwesterhoven.nl/wp-content/themes/yootheme/cache/3f/carpaccio_2018_wapenvanwesterhoven-3fda17a6.webp" alt="" class="img-fluid" height="400">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://hetwapenvanwesterhoven.nl/wp-content/themes/yootheme/cache/1d/kroket_wapenvanwesterhoven-1ded9415.webp" alt="" class="img-fluid" height="400">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://hetwapenvanwesterhoven.nl/wp-content/themes/yootheme/cache/f3/sandwich_2018_wapenvanwesterhoven-f396323e.webp" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                                        <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://hetwapenvanwesterhoven.nl/wp-content/themes/yootheme/cache/fc/hetwapenvanwesterhoven_beeld-fcddf627.webp" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+        </section> <!-- End Gallery Section -->
+       
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-info">
+                            <img src="https://hetwapenvanwesterhoven.nl/wp-content/themes/yootheme/cache/5c/logo-wapenvanwesterhoven-5c3e701f.png" width="200" class="img-fluid">
+                            <div class="social-links mt-3">
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Links</h4>
+                        <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Bourgondisch eten</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Menu</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Reserveren</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Openingstijden</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Maandag: 13.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Dinsdag: 10.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Woensdag: 10.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Donderdag: 10.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Vrijdag: 10.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Zaterdag: 10.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Zondag: 10.00 - 21.00</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.8864700948084!2d5.394914077288073!3d51.331607971773856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6d139de631d11%3A0x1fbaf5e7e75dc3d6!2sHet%20Wapen%20van%20Westerhoven!5e0!3m2!1snl!2snl!4v1715600871818!5m2!1snl!2snl" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>NomadicOwls</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <style is:inline>
+    .menu-block {
+        margin-bottom: 30px;
+    }
+
+    .menu-title {
+        border-bottom: 3px solid #e0e6e3;
+        margin-bottom: 36px;
+        padding-bottom: 10px;
+    }
+
+    .menu-content {
+        border-bottom: 1px solid #e0e6e3;
+        margin-bottom: 30px;
+    }
+
+    .dish-img {}
+
+    .dish-content {
+        margin-top: 12px;
+        margin-bottom: 40px;
+    }
+
+    .dish-meta {
+        font-size: 12px;
+        text-transform: uppercase;
+        display: block;
+        width: 210px;
+        line-height: 1.7;
+    }
+
+    .dish-title {
+        margin-bottom: 6px;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .well-block .dish-meta {
+        width: 100%;
+    }
+    </style>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <!-- <script src="assets/vendor/aos/aos.js"></script> -->
+    <script is:inline src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script is:inline src="/assets/js/main.js"></script>
+</body>
+
+</html>
