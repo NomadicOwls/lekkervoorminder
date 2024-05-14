@@ -1,0 +1,248 @@
+---
+import { SEO } from "astro-seo";
+export interface Props {
+title: string;
+}
+function removeTrailingSlash(str: string) {
+return str.replace(/\/+$/, '');
+}
+const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site).toString());
+const resolvedImageWithDomain = new URL(
+"/opengraph.jpg",
+Astro.site
+).toString();
+const { title } = Astro.props;
+const makeTitle = "Restaurant Trien in Herpen | Reserveer en ontvang een kopje thee of koffie van het huis";
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <SEO title={makeTitle} description="Het wapen van Westerhoven" canonical={canonicalURL} />
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+        </div>
+    </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-cente">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="/" class="logo me-auto me-lg-0"><img src="https://media-cdn.tripadvisor.com/media/photo-s/07/9c/c7/0f/trien.jpg" alt="" class="img-fluid"></a>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#download-voucher">Download voucher</a></li>
+                   
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+            <a href="#reserveren" class="book-a-table-btn scrollto d-none d-lg-flex">Download voucher</a>
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center" style="background: url(https://res.cloudinary.com/martijnmegens/image/upload/c_scale,g_center,q_auto:eco,w_1280/v1/gallery/2020-06-04_Restaurant_Trien-DSC08413.jpg) no-repeat center center;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover; 
+            -o-background-size: cover;">
+        <div class="container position-relative text-center text-lg-start">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>Heerlijk culinair genieten<br /><span>Restaurant Trien in Herpen</span></h1>
+                    <h2>Download voucher en ontvang een drankje van het huis bij een reservering</h2>
+                    <div class="btns">
+                        
+                        <a href="#reserveren" class="btn-book animated fadeInUp scrollto">Download voucher</a>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative">
+          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+        </div> -->
+            </div>
+        </div>
+
+        <div class="overlay text-center">
+                    Deze deal is verlopen of niet beschikbaar
+                </div>
+    </section><!-- End Hero -->
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 py-5 pl-md-0 pl-4">
+                    <div class="heading-section pl-lg-5 ml-md-5">
+                        <h2 id="download-voucher" class="section-title-h2">
+                            Geniet van een drankje van het huis! Download voucher en toon deze bij Restaurant Trien
+                        </h2>
+                        <br />
+                    </div>
+                    <div class="pl-lg-5 ml-md-5">
+                        <p>Restaurant Trien, gelegen in Herpen, biedt een unieke eetervaring in een sfeervolle omgeving die klassieke ambiance combineert met een moderne uitstraling. Het restaurant is bekend om zijn voortreffelijke menu dat zowel tijdens de lunch als het diner geserveerd wordt. Bijzonder aan de keuken van Trien is het gebruik van seizoensgebonden ingrediënten zoals asperges, die op verschillende wijzen worden bereid, van klassieke asperges met ham en hollandaisesaus tot innovatieve gerechten zoals kapsalon asperge.</p>
+                        <br />
+                        <p>
+                            Trien heeft een gevarieerd aanbod dat naast traditionele gerechten ook modernere creaties bevat zoals Iberico ribfingers met okonomiyaki en furikake. De zalmfilet met asperges en hollandaisesaus is ook een populaire keuze onder de gasten.
+                        </p>
+                        <br />
+                        <p>
+                            De openingstijden zijn afgestemd op een breed publiek, met service van woensdag tot zondag, beginnend in de middag op vrijdag, zaterdag en zondag, en alleen avondopeningen op woensdag en donderdag. Het restaurant is gesloten op maandag en dinsdag.
+                        </p>
+                        <br />
+                        <p>
+                            Bij Restaurant Trien waarderen we onze gasten en willen we iets speciaals terugdoen. Daarom bieden we jou een gratis drankje aan van het huis! Het enige wat je hoeft te doen is de volgende voucher te downloaden en te presenteren bij je volgende bezoek.
+                        </p>
+                        <br />
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="pt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <h2 id="reserveren" class="section-title-h2">
+                                    Download voucher
+                                </h2><br />
+                       <div class="card mt-5">
+                                        <div class="card-body">
+                                        <br/>
+                                            <h2 class="card-title">Hoe Werkt Het?</h2>
+                                            <p class="card-text">
+                                                Volg deze stappen om je gratis drankje te claimen:
+                                            </p>
+                                            <ol class="list-group list-group-flush">
+                                                <li class="list-group-item">1. Download de voucher via de link hieronder.</li>
+                                                <li class="list-group-item">2. Print de voucher uit of sla hem op je mobiele telefoon op.</li>
+                                                <li class="list-group-item">3. Presenteer de voucher bij je bezoek aan Restaurant Trien.</li>
+                                                <li class="list-group-item">4. Kies je favoriete drankje van onze drankenkaart en geniet!</li>
+                                            </ol>
+                                            
+                                        </div>
+                                        <a href="#" class="btn btn-mod btn-border btn-circle btn-medium">
+            Download niet beschikbaar
+          </a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <!-- ======= Gallery Section ======= -->
+        <section id="gallery" class="gallery">
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-0">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://res.cloudinary.com/martijnmegens/image/upload/c_scale,g_center,q_auto:eco,w_1280/v1/gallery/2020-06-04_Restaurant_Trien-DSC08331.jpg" alt="" class="img-fluid" height="400">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://res.cloudinary.com/martijnmegens/image/upload/c_scale,g_center,q_auto:eco,w_1280/v1/gallery/2020-06-04_Restaurant_Trien-DSC08310-Edit.jpg" alt="" class="img-fluid" height="400">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://res.cloudinary.com/martijnmegens/image/upload/c_scale,g_center,q_auto:eco,w_1280/v1/gallery/DSC00120-Trien-2018-01-19.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                                        <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://res.cloudinary.com/martijnmegens/image/upload/c_scale,g_center,q_auto:eco,w_1280/v1/gallery/2020-06-04_Restaurant_Trien-DSC08300.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+        </section> <!-- End Gallery Section -->
+       
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-info">
+                            <img src="https://media-cdn.tripadvisor.com/media/photo-s/07/9c/c7/0f/trien.jpg" width="200" class="img-fluid">
+                            <div class="social-links mt-3">
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Links</h4>
+                        <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#download-voucher">Download voucher</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Openingstijden</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Maandag: 13.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Dinsdag: 10.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Woensdag: 10.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Donderdag: 10.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Vrijdag: 10.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Zaterdag: 10.00 - 21.00</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Zondag: 10.00 - 21.00</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.9191245616007!2d5.636465077307914!3d51.771085671874516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c70245242a1611%3A0xe1e52d003c9b2c6d!2sRestaurant%20Trien!5e0!3m2!1snl!2snl!4v1715679275423!5m2!1snl!2snl" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>NomadicOwls</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <!-- <script src="assets/vendor/aos/aos.js"></script> -->
+    <script is:inline src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script is:inline src="/assets/js/main.js"></script>
+</body>
+
+</html>
