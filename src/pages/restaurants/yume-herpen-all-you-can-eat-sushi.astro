@@ -1,5 +1,6 @@
 ---
 import { SEO } from "astro-seo";
+import Snipcart from "@components/snipcart.astro";
 export interface Props {
 title: string;
 }
@@ -71,11 +72,12 @@ const makeTitle = "Yume Sushi & Grill Herpen | Geniet onbeperkt van de beste all
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#reserveren">Koop voucher</a></li>
+                    <li><a class="nav-link scrollto" href="#deal">Bekijk voordeel</a></li>
+                    <li><a class="nav-link scrollto" href="#reserveren">Reserveren</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-            <a href="#reserveren" class="book-a-table-btn scrollto d-none d-lg-flex">Koop voucher</a>
+            <a href="#deal" class="book-a-table-btn scrollto d-none d-lg-flex">Bekijk voordeel</a>
         </div>
     </header><!-- End Header -->
     <!-- ======= Hero Section ======= -->
@@ -87,7 +89,7 @@ const makeTitle = "Yume Sushi & Grill Herpen | Geniet onbeperkt van de beste all
                     <h2>50% korting voor elke 2e persoon</h2>
                     <div class="btns">
                         <!-- <a href="https://take.app/yumeherpen" class="btn-menu animated fadeInUp scrollto" target="_blank">Bestellen</a> -->
-                        <a href="#reserveren" class="btn-book animated fadeInUp scrollto">Koop voucher</a>
+                        <a href="#reserveren" class="btn-book animated fadeInUp scrollto">Reserveren</a>
                     </div>
                 </div>
                 <!--  <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative">
@@ -95,9 +97,9 @@ const makeTitle = "Yume Sushi & Grill Herpen | Geniet onbeperkt van de beste all
         </div> -->
             </div>
         </div>
-        <div class="overlay text-center">
+        <!--<div class="overlay text-center">
             Deze deal is verlopen of niet beschikbaar
-        </div>
+        </div>-->
     </section><!-- End Hero -->
     <main id="main">
         <!-- ======= About Section ======= -->
@@ -107,8 +109,8 @@ const makeTitle = "Yume Sushi & Grill Herpen | Geniet onbeperkt van de beste all
                     <div class="row">
                         <div class="col-sm-7 py-5 pl-md-0 pl-4">
                             <div class="heading-section pl-lg-5 ml-md-5">
-                                <h2 class="section-title-h2">
-                                    Geniet met Korting: Koop een voucher en ontvang 50% korting op de 2e persoon.
+                                <h2 id="deal" class="section-title-h2">
+                                    Geniet met Korting: Reserveer en ontvang 50% korting op de 2e persoon.
                                 </h2>
                                 <br />
                             </div>
@@ -127,6 +129,20 @@ const makeTitle = "Yume Sushi & Grill Herpen | Geniet onbeperkt van de beste all
                                     Bij Yume geloven we in het leveren van een onvergetelijke culinaire ervaring voor al onze gasten. Ons team van ervaren koks zet zich in om elke maaltijd tot in de puntjes te verzorgen, met oog voor kwaliteit en smaak. Bovendien streven we ernaar om een gastvrije en gastvrije omgeving te creëren waar u zich direct thuis zult voelen.
                                 </p>
                                 <br />
+
+                                <div class="card-body">
+                                        
+                                                <h2 class="card-title">Hoe Werkt Het?</h2>
+                                                <p class="card-text">
+                                                    Volg deze stappen om je voordeel te claimen:
+                                                </p>
+                                                <ol class="list-group list-group-flush">
+                                                    <li class="list-group-item">1. Reserveer via deze pagina.</li>
+                                                    <li class="list-group-item">2. Bezoek Yume Herpen op gekozen datum.</li>
+                                                    <li class="list-group-item">3. Meld uw naam, email adres of telefoonnummer aan de Kassa.</li>
+                                                    <li class="list-group-item">4. Geniet van je voordeel!</li>
+                                                </ol>
+                                            </div>
                                 <div class="flex flex-col md:flex-row mb-6 md:mb-12 md:gap-8 mt-5">
                                     <div id="more-info" class="mb-4 md:mb-0 md:flex-shrink-0 md:max-w-[calc(50%-1rem)]">
                                         <h3 class="m-0 font-page-title mb-2 text-brand-800 text-page-title text-xl font-bold leading-8"> Highlights </h3>
@@ -151,7 +167,7 @@ const makeTitle = "Yume Sushi & Grill Herpen | Geniet onbeperkt van de beste all
                                         <h3 class="m-0 font-page-title mb-2 text-brand-800 text-page-title text-xl font-bold leading-8"> Grote kleine letters </h3>
                                         <div class="highlight">
                                             <ul>
-                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Reserveren:</li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Reserveren uitsluitend via deze website</li>
                                                 <li class="mb-2 text-gray-700 text-dealhighlights">• Telefonische reserveringen voor deze deal worden niet aangenomen</li>
                                                 <li class="mb-2 text-gray-700 text-dealhighlights">• Wanneer je na je reservering niet de voucher toont, komt deze automatisch te vervallen</li>
                                                 <li class="mb-2 text-gray-700 text-dealhighlights">• Niet geldig in combinatie met andere acties</li>
@@ -160,35 +176,24 @@ const makeTitle = "Yume Sushi & Grill Herpen | Geniet onbeperkt van de beste all
                                         </div>
                                     </div>
                                 </div>
-                                <h2 id="reserveren" class="section-title-h2">
+                                <h2 id="loc" class="section-title-h2">
                                     Locatie
                                 </h2>
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.5750081832066!2d5.641926577308222!3d51.777376171876156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c703d67a43b92d%3A0x220cc50031a09b17!2sYume%20Sushi%2C%20Grill%20%26%20Tapas%20Herpen!5e0!3m2!1snl!2snl!4v1715352828008!5m2!1snl!2snl" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
-                        <div class="col-sm-5 img-bg align-items-center justify-content-center justify-content-md-end img-2">
+                        <div class="col-sm-5">
                             <div class="pt-5">
                                 <div class="row justify-content-center">
                                     <div class="col-md-8">
                                         <h2 id="reserveren" class="section-title-h2">
-                                            Hoe werkt het?
-                                        </h2><br />
+                                            Reserveren
+                                        </h2>
                                         <div class="card mt-5">
-                                            <div class="card-body">
-                                                <br />
-                                                <h2 class="card-title">Hoe Werkt Het?</h2>
-                                                <p class="card-text">
-                                                    Volg deze stappen om je voordeel te claimen:
-                                                </p>
-                                                <ol class="list-group list-group-flush">
-                                                    <li class="list-group-item">1. Koop de voucher via de link hieronder.</li>
-                                                    <li class="list-group-item">2. Print de voucher uit of sla hem op in je mobiele telefoon.</li>
-                                                    <li class="list-group-item">3. Presenteer de voucher bij je bezoek aan Yume Herpen.</li>
-                                                    <li class="list-group-item">4. Geniet van je voordeel!</li>
-                                                </ol>
-                                            </div>
-                                            <a href="#lastadded" class="btn px-5 py-3 text-white mt-3 mt-sm-0" style="border-radius: 30px; background-color: #9B5DE5;">Koop voucher voor &euro;2,49</a>
-                                        </div>
+                                                           
+                                        
+                                        <iframe src="https://app.tableo.com/widget/yume-sushi-grill-tapas-herpen-netherlands/?bgColor=%23ffffff&textColor=%23000000&googleFont=&fontSize=14&cornerStyle=none&textAlignment=left&formControlBgColor=%23ffffff&formControlColor=%23000000&formControlBorderColor=%23444444&formControlBorderShadow=6&formControlBorderWidth=1&formControlBorderOpacity=0.1&buttonBgColor=%23000000&buttonTextColor=%23ffffff" width="100%" height="800" style="border:none;min-height:700px"></iframe>
+                                    </div>
                                     </div>
 
 
