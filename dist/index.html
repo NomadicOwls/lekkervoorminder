@@ -51,7 +51,7 @@
     })(window,document,'script','dataLayer','GTM-5G7DWG4');</script>
     <!-- End Google Tag Manager -->
 
-  <link rel="stylesheet" href="/_astro/contact.8cbc8fcc.css" />
+  <link rel="stylesheet" href="/_astro/contact.dc165e68.css" />
 <link rel="stylesheet" href="/_astro/contact.e35669fd.css" /></head>
   <body>
     <div class="max-w-screen-xl mx-auto px-5">
@@ -88,7 +88,7 @@
     
   <div class="d-sm-flex align-items-center justify-content-between w-100" style="height: 100vh;">
   <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline px-5 mt-5">
-    <h1 class="display-4 my-4 font-weight-bold">Lekker uit eten met dat kleine beetje extra bij de beste restaurants in <span style="color: #9B5DE5;">Nederland</span></h1>
+    <h1 class="display-4 my-4 font-weight-bold">Lekker uit eten met net dat kleine beetje extra bij de beste restaurants in <span style="color: #9B5DE5;">Nederland</span></h1>
     <a href="#lastadded" class="btn px-5 py-3 text-white mt-3 mt-sm-0" style="border-radius: 30px; background-color: #9B5DE5;">Bekijk restaurants</a>
   </div>
   <!-- in mobile remove the clippath -->
@@ -111,10 +111,11 @@
                     </div>
                 </div>
                 <div class="row">
+                 <ul id="locationMenu" class="nav nav-pills justify-content-center mb-3"></ul>
                     <div class="col-lg-4">
                         <div class="blog-grid">
                             <div class="blog-img">
-                                <!-- <div class="date">04 FEB</div> -->
+                                <div class="date" data-loc="Herpen">Herpen</div>
                                 <a href="restaurants/yume-herpen-all-you-can-eat-sushi">
                                     <img src="https://www.yumeherpen.nl/wp-content/uploads/2024/04/DSC03985-1536x1024.webp" title="" width="350" alt="">
                                 </a>
@@ -136,7 +137,7 @@
 <div class="col-lg-4">
                      <div class="blog-grid">
                             <div class="blog-img">
-                                <!-- <div class="date">04 FEB</div> -->
+                                <div class="date" data-loc="Westerhoven">Westerhoven</div> 
                                 <a href="restaurants/het-wapen-van-westerhoven">
                                     <img src="https://hetwapenvanwesterhoven.nl/wp-content/themes/yootheme/cache/1d/kroket_wapenvanwesterhoven-1ded9415.webp" title="" width="350" alt="">
                                 </a>
@@ -152,6 +153,52 @@
                                 </div>
                             </div>
                         </div>
+
+
+                        </div>
+
+                          <div class="col-lg-4">
+                     <div class="blog-grid">
+                            <div class="blog-img">
+                                 <div class="date z-index-3" data-loc="Kaatsheuvel">Kaatsheuvel</div> 
+                                <a href="/restaurants/ichi-lounge-asian-fusion-cuisine-kaatsheuvel">
+                                    <img src="https://www.ichilounge.nl/ichi/food/IMG_1526.jpg" title="" width="350" alt="">
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h5><a href="/restaurants/ichi-lounge-asian-fusion-cuisine-kaatsheuvel" target="_blank">Drankje van het huis bij Ichi-Lounge Kaatsheuvel</a></h5>
+                                <p>Download de volgende voucher en ontvang een drankje van het huis bij uw maaltijd.</p>
+                                <div class="btn-bar">
+                                    <a href="/restaurants/ichi-lounge-asian-fusion-cuisine-kaatsheuvel" class="px-btn-arrow">
+                                        <span>Bekijk deal</span>
+                                        <i class="arrow"></i>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                         <div class="col-lg-4">
+                     <div class="blog-grid">
+                            <div class="blog-img">
+                                 <div class="date z-index-3" data-loc="Herpen">Herpen</div> 
+                                <a href="/restaurants/restaurant-trien-herpen">
+                                    <img src="https://res.cloudinary.com/martijnmegens/image/upload/c_scale,g_center,q_auto:eco,w_1280/v1/gallery/DSC00120-Trien-2018-01-19.jpg" title="" width="350" alt="">
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h5><a href="/restaurants/restaurant-trien-herpen" target="_blank">Drankje van het huis bij Restaurant Trien in Herpen</a></h5>
+                                <p>Download de volgende voucher en ontvang een drankje van het huis bij uw maaltijd.</p>
+                                <div class="btn-bar">
+                                    <a href="/restaurants/restaurant-trien-herpen" class="px-btn-arrow">
+                                        <span>Bekijk deal</span>
+                                        <i class="arrow"></i>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                    
                 </div>
@@ -160,6 +207,83 @@
 
   
   </main><!-- End #main -->
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const locations = document.querySelectorAll('[data-loc]');
+    const uniqueLocations = {};
+
+    locations.forEach(loc => {
+        uniqueLocations[loc.getAttribute('data-loc')] = true;
+    });
+
+    const menu = document.getElementById('locationMenu');
+
+    // Create and add the 'Show All' button first
+    const allItem = document.createElement('li');
+    allItem.className = 'nav-item';
+    const allLink = document.createElement('a');
+    allLink.className = 'nav-link';
+    allLink.textContent = 'Toon alles';
+    allLink.href = '#';
+    allLink.onclick = function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        showAllContent();
+        setActive(allLink); // Set active class on the 'Show All' link
+    };
+
+    allItem.appendChild(allLink);
+    menu.appendChild(allItem);
+
+    // Create a nav-item with a nav-link for each unique location
+    for (const loc in uniqueLocations) {
+        const item = document.createElement('li');
+        item.className = 'nav-item';
+        const link = document.createElement('a');
+        link.className = 'nav-link';
+        link.textContent = loc;
+        link.href = '#';
+        link.onclick = function(event) {
+            event.preventDefault();
+            filterContent(loc);
+            setActive(link);
+        };
+        item.appendChild(link);
+        menu.appendChild(item);
+    }
+
+    function filterContent(location) {
+        locations.forEach(loc => {
+            const parentDiv = loc.closest('.col-lg-4');
+            if (loc.getAttribute('data-loc') === location) {
+                parentDiv.style.display = 'block';
+            } else {
+                parentDiv.style.display = 'none';
+            }
+        });
+    }
+
+    function showAllContent() {
+        locations.forEach(loc => {
+            const parentDiv = loc.closest('.col-lg-4');
+            parentDiv.style.display = 'block';
+        });
+    }
+
+    function setActive(currentLink) {
+        const links = menu.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+        currentLink.classList.add('active');
+    }
+
+    // Optionally, click 'Show All' on page load
+    allLink.click();
+});
+
+
+</script>
   
 </div>
 

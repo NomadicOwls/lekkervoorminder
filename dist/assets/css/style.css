@@ -25,6 +25,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/*--------------------------------------------------------------
+# Overlay
+--------------------------------------------------------------*/
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+
+
 
 /*--------------------------------------------------------------
 # Preloader
@@ -482,11 +503,11 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 100vh;
+/*  height: 100vh;*/
   background: url("https://i.ibb.co/0Y63ZtG/hero-yume.webp") top center;
   background-size: cover;
   position: relative;
-  padding: 0;
+  padding: 30px 0;
 }
 
 #hero:before {
