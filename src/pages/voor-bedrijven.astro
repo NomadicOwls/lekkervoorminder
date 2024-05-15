@@ -4,6 +4,7 @@ import Faq from "@components/faq/faq.astro";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import PricingTables from "@components/pricingTables.astro";
 
 
 export const faqItems = [
@@ -52,17 +53,22 @@ export const faqItems = [
   <div class="bg-babyblue flex h-96">
         <div class="m-auto text-center">
             <h1 class="font-bold text-6xl text-gray-800">
-                Veelgestelde vragen
-                </h2>
+                Aanmelden als bedrijf
+                </h1>
                 <p class="text-lg font-light mt-4">
-                    Veelgestelde vragen aan een elektricien
+                    Wij zoeken naar bedrijven die net dat kleine beetje extra doen voor klanten
                 </p>
         </div>
     </div>
   <Container>
+
+
+
+<PricingTables />
+
     
 
-    <div class="gap-10 mx-auto max-w-4xl mt-16">
+    <div class="mx-auto max-w-4xl mt-16">
       <div>
         <h2 class="font-medium text-2xl text-gray-800">Elektricien Rotterdam</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
@@ -73,8 +79,12 @@ export const faqItems = [
     
       </div>
     </div>
-  </Container>
+    
+  
 </Layout>
+
+
+
 
  
 
