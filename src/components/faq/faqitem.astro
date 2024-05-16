@@ -6,7 +6,7 @@ const {question, answer, index} = Astro.props
     <div id={`faq-item-heading-${index}`}>
         <button
             type="button"
-            class="flex items-center justify-between w-full p-5 font-medium text-lg text-left text-gray-500 border border-gray-200 rounded-lg focus:ring-0 mb-5"
+            class="flex items-center justify-between w-full p-3 font-medium text-lg text-left text-gray-500 border border-gray-200 rounded-lg focus:ring-0 mb-2"
             data-accordion-target={`#faq-item-body-${index}`}
             aria-expanded="false"
             aria-controls={`faq-item-body-${index}`}>
@@ -25,7 +25,7 @@ const {question, answer, index} = Astro.props
         </button>
     </div>
     <div id={`faq-item-body-${index}`} class="hidden" aria-labelledby={`faq-item-heading-${index}`}>
-        <p class="mb-5 px-5">{answer}</p>
+        <p class="mb-5 px-2">{answer}</p>
     </div>
 </div>
 
