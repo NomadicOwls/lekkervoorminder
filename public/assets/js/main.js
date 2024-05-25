@@ -2,6 +2,11 @@
 (function() {
   "use strict";
 
+  document.addEventListener('DOMContentLoaded', function() {
+  var myModal = new bootstrap.Modal(document.getElementById('imageModal'));
+  myModal.show();
+});
+
   /**
    * Easy selector helper function
    */
