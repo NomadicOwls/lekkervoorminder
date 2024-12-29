@@ -1,0 +1,352 @@
+---
+import { SEO } from "astro-seo";
+import Snipcart from "@components/snipcart.astro";
+export interface Props {
+title: string;
+}
+function removeTrailingSlash(str: string) {
+return str.replace(/\/+$/, '');
+}
+const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site).toString());
+const resolvedImageWithDomain = new URL(
+"/opengraph.jpg",
+Astro.site
+).toString();
+const { title } = Astro.props;
+const makeTitle = "Foodbar 14 Tien | Lunch en dineren bij foodbar 14tien ";
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <SEO title={makeTitle} description="Geniet van lunch en diner bij Foodbar 14TIEN, waar dorpse gezelligheid samenkomt met de charme van het prachtige buitengebied van Herpen. Voorheen bekend als Den Handwijzer." canonical={canonicalURL} />
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+    ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '932633251977386');
+    fbq('track', 'PageView');
+    </script><noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=932633251977386&ev=PageView&noscript=1" /></noscript><!-- End Meta Pixel Code -->
+
+
+<style is:inline>
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+
+<body>
+
+
+
+
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+        </div>
+    </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-cente">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="/" class="logo me-auto me-lg-0"><img src="/img/logos/logo-foodbar14tien.svg" alt="" class="img-fluid"></a>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#deal">Bekijk voordeel</a></li>
+                    <li><a class="nav-link scrollto" href="#reserveren">Download QR code</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+            <a href="#deal" class="book-a-table-btn scrollto d-none d-lg-flex">Bekijk voordeel</a>
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative text-center text-lg-start">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>Dorpse gezelligheid en gezellig dineren of borrelen bij <span> Foodbar 14 Tien in</span> Herpen</h1>
+                    <h2>Bekend om vlees, vis, vega en vegangerechten</h2>
+                    <div class="btns">
+                        <!-- <a href="https://take.app/yumeherpen" class="btn-menu animated fadeInUp scrollto" target="_blank">Bestellen</a> -->
+                        <a href="#reserveren" class="btn-book animated fadeInUp scrollto">Reserveren</a>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative">
+          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+        </div> -->
+            </div>
+        </div>
+      <div class="overlay text-center">
+            Deze deal is verlopen of niet beschikbaar
+        </div>
+    </section><!-- End Hero -->
+    <main id="main">
+        <!-- ======= About Section ======= -->
+        <section id="all-you-can-eat" class="bg-white section-padding">
+            <div class="container">
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-sm-7 py-5 pl-md-0 pl-4">
+                            <div class="heading-section pl-lg-5 ml-md-5">
+                                <h2 id="deal" class="section-title-h2">
+                                    Een drankje van het huis bij bestelling van onze hamburger 14TIEN
+                                </h2>
+                                <br />
+                            </div>
+                            <div class="pl-lg-5 ml-md-5">
+                                <p>Bij Foodbar 14TIEN draait het om genieten, en nu maken we het nog specialer: bestel onze populaire Hamburger 14TIEN en ontvang een drankje van het huis!</p>
+                                <br />
+                                <p>
+                                    Of u nu komt voor een uitgebreide lunch, een gezellig diner of een borrel, onze veelzijdige menukaart biedt voor iedereen wat wils. Van vlees en vis tot vegetarische en veganistische opties, gecombineerd met een brede selectie aan (non-)alcoholische dranken.
+                                </p>
+                                <br />
+                                <p>
+                                    Neem een pauze van uw fietstocht langs Herperduin-De Maashorst of maak er een uitje van naar nabijgelegen dorpen zoals Schaijk en Ravenstein. Onze sfeervolle ambiance en zonnige terras maken uw bezoek compleet.
+                                </p>
+                                <br />
+                                              <p>
+                                    Mis deze smakelijke actie niet! Kom langs en ervaar de unieke sfeer van Foodbar 14TIEN. Wij verwelkomen u graag!
+                                </p>
+                                <br />
+     
+                                <div class="flex flex-col md:flex-row mb-6 md:mb-12 md:gap-8 mt-5">
+                                    <div id="more-info" class="mb-4 md:mb-0 md:flex-shrink-0 md:max-w-[calc(50%-1rem)]">
+                                        <h3 class="m-0 font-page-title mb-2 text-brand-800 text-page-title text-xl font-bold leading-8"> Highlights </h3>
+                                        <div class="highlight">
+                                            <ul>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Een drankje van het huis bij bestelling van onze hamburger 14TIEN</li><br />
+                                                <li class="mb-2 text-gray-700 text-dealhighlights"><strong> Zie hier de inhoud van de deal</strong></li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Non Alcoholische dranken</li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Koffie / Thee</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="md:flex-shrink-0 md:max-w-[calc(50%-1rem)]">
+                                        <h3 class="m-0 font-page-title mb-2 text-brand-800 text-page-title text-xl font-bold leading-8"> Grote kleine letters </h3>
+                                        <div class="highlight">
+                                            <ul>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• QR code alleen via deze pagina te verkrijgen</li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• 1 drankje per persoon</li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Niet geldig in combinatie met andere acties</li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Vragen over de deal? WhatsApp met: <a href="https://wa.me/send?phone=31628456815" target="_blank">+31628456815</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 id="loc" class="section-title-h2">
+                                    Locatie
+                                </h2>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.584965846672!2d5.617840640217885!3d51.76991992173105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c703dae3cc59a5%3A0x90bb09fbbf9a4489!2sFoodbar%2014TIEN!5e0!3m2!1snl!2sid!4v1735451792306!5m2!1snl!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <h2 class="section-title-h2 mt-5">Openingstijden</h2>
+                                <table class="table table-striped table table-bordered" style="width:350px;">
+                                    <thead class="thead">
+                                        <th>Dag</th>
+                                    </thead>
+                                    <tbody class="table table-striped">
+                                        <tr>
+                                            <td>Maandag</td>
+                                            <td>Gesloten</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dinsdag</td>
+                                            <td>Gesloten</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Woensdag</td>
+                                            <td>12.00 - 22.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Donderdag</td>
+                                            <td>12.00 - 22.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vrijdag</td>
+                                            <td>12.00 - 22.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zaterdag</td>
+                                            <td>12.00 - 22.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zondag</td>
+                                            <td>12.00 - 22.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="pt-5">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
+                                        <h2 id="reserveren" class="section-title-h2">
+                                            Download QR Code
+                                        </h2>
+                                         <div class="card mt-5">
+                                        <div class="card-body">
+                                        <br/>
+                                            <p class="card-text">
+                                                Volg deze stappen om je voordeel te claimen:
+                                            </p>
+                                            <ol class="list-group list-group-flush">
+                                        <li class="list-group-item">1. Download de QR code via deze pagina.</li>
+                                        <li class="list-group-item">2. Bezoek Foodbar 14 Tien </li>
+                                        <li class="list-group-item">3. Toon de QR code aan 1 van onze medewerkers</li>
+                                        <li class="list-group-item">4. Geniet van je voordeel!</li>
+                                    </ol>
+                                            
+                                        </div>
+                                        <a href="" class="btn px-5 py-3 text-white mt-3 mb-3" style="border-radius: 30px; background-color: #9B5DE5;">Download QR code</a>
+      
+  
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- ======= Gallery Section ======= -->
+        <section id="gallery" class="gallery">
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-0">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://www.14tien.nl/wp-content/uploads/2024/10/IMG-20241022-WA0014-1920x887.jpg" alt="" class="img-fluid" height="400">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://www.14tien.nl/wp-content/uploads/2022/05/20220502_185718-1920x865.jpg" alt="" class="img-fluid" height="400">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://www.14tien.nl/wp-content/uploads/2022/05/20220501_190921-scaled-e1658328574370-1920x864.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://www.14tien.nl/wp-content/uploads/2022/08/281606195_171802978547180_3385564429204157234_n.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- End Gallery Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>NomadicOwls</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <style is:inline>
+    .menu-block {
+        margin-bottom: 30px;
+    }
+
+    .menu-title {
+        border-bottom: 3px solid #e0e6e3;
+        margin-bottom: 36px;
+        padding-bottom: 10px;
+    }
+
+    .menu-content {
+        border-bottom: 1px solid #e0e6e3;
+        margin-bottom: 30px;
+    }
+
+    .dish-img {}
+
+    .dish-content {
+        margin-top: 12px;
+        margin-bottom: 40px;
+    }
+
+    .dish-meta {
+        font-size: 12px;
+        text-transform: uppercase;
+        display: block;
+        width: 210px;
+        line-height: 1.7;
+    }
+
+    .dish-title {
+        margin-bottom: 6px;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .well-block .dish-meta {
+        width: 100%;
+    }
+    </style>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <!-- <script src="assets/vendor/aos/aos.js"></script> -->
+    <script is:inline src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script is:inline src="/assets/js/main.js"></script>
+</body>
+
+</html>
