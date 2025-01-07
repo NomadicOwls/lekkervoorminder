@@ -1,5 +1,6 @@
 ---
 import Button from "./ui/button.astro";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!-- To make this contact form work, create your free access key from https://web3forms.com/
@@ -11,6 +12,7 @@ import Button from "./ui/button.astro";
   class="needs-validation"
   novalidate>
   <input type="hidden" name="access_key" value="015d83ab-a38c-4480-a342-ea5ee4f8ee3a" />
+  <input type="hidden" name="subject" value={canonicalURL}>
   <!-- Create your free access key from https://web3forms.com/ -->
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div class="mb-5">
