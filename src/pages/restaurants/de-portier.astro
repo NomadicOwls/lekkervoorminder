@@ -1,0 +1,344 @@
+---
+import { SEO } from "astro-seo";
+import Contactform from "@components/contactform.astro";
+import Snipcart from "@components/snipcart.astro";
+export interface Props {
+title: string;
+}
+function removeTrailingSlash(str: string) {
+return str.replace(/\/+$/, '');
+}
+const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site).toString());
+const resolvedImageWithDomain = new URL(
+"/opengraph.jpg",
+Astro.site
+).toString();
+const { title } = Astro.props;
+const makeTitle = "Restaurant De Portier| Lunch, Diner, avondje uit bij restaurant de Portier ";
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <SEO title={makeTitle} description="Geniet van lunch, diner of een avondje uit bij Restaurant de Portier in Nijmegen" canonical={canonicalURL} />
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+    ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '932633251977386');
+    fbq('track', 'PageView');
+    </script><noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=932633251977386&ev=PageView&noscript=1" /></noscript><!-- End Meta Pixel Code -->
+
+
+<style is:inline>
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+
+<body>
+
+
+
+
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+        </div>
+    </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-cente">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="/" class="logo me-auto me-lg-0"><img src="/img/logos/logo-foodbar14tien.svg" alt="" class="img-fluid"></a>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#deal">Bekijk voordeel</a></li>
+                    <li><a class="nav-link scrollto" href="#reserveren">Download QR code</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+            <a href="#deal" class="book-a-table-btn scrollto d-none d-lg-flex">Bekijk voordeel</a>
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative text-center text-lg-start">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>Lunch Diner of een avondje uit bij<span>Restaurant de Portier </span> in Nijmegen</h1>
+                    <h2>bekend om zijn hoogwaardige Franse keuken en is vermeld in de Michelingids.</h2>
+                    <div class="btns">
+                        <!-- <a href="https://take.app/yumeherpen" class="btn-menu animated fadeInUp scrollto" target="_blank">Bestellen</a> -->
+                        <a href="#reserveren" class="btn-book animated fadeInUp scrollto">Reserveren</a>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative">
+          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+        </div> -->
+            </div>
+        </div>
+      <div class="overlay text-center">
+            Deze deal is verlopen of niet beschikbaar
+        </div>
+    </section><!-- End Hero -->
+    <main id="main">
+        <!-- ======= About Section ======= -->
+        <section id="all-you-can-eat" class="bg-white section-padding">
+            <div class="container">
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-sm-7 py-5 pl-md-0 pl-4">
+                            <div class="heading-section pl-lg-5 ml-md-5">
+                                <h2 id="deal" class="section-title-h2">
+                                    Maak kans op een Viergangen menu voor 2 personen T.W.V. &euro; 150
+                                </h2>
+                                <br />
+                            </div>
+                            <div class="pl-lg-5 ml-md-5">
+                                <p>Restaurant De Portier, gelegen in het hart van Nijmegen, is dé plek voor fijnproevers die op zoek zijn naar een unieke culinaire ervaring. Met een focus op duurzaamheid en lokaal geproduceerde ingrediënten, weet De Portier traditionele smaken te combineren met moderne technieken, wat resulteert in verrassende en verfijnde gerechten.</p>
+                                <br />
+                                <p>
+                                    Bij De Portier draait alles om bewust genieten. Het restaurant werkt samen met lokale boeren, vissers en leveranciers, zodat elk gerecht een eerbetoon is aan de natuur en de regio. De kaart wisselt regelmatig, afhankelijk van wat het seizoen te bieden heeft, wat zorgt voor een frisse en gevarieerde culinaire reis.
+                                </p>
+                                <br />
+                                <p>
+                                    De intieme ambiance van het restaurant maakt het de perfecte locatie voor een bijzondere avond uit. De warme inrichting, het attente personeel en de zorgvuldig samengestelde wijnkaart zorgen voor een complete beleving.
+                                </p>
+                                <br />
+                                              <p>
+                                    Bezoek Restaurant De Portier en ontdek waarom het een geliefde bestemming is voor foodies in Nijmegen en omstreken. Reserveren wordt aangeraden, want deze verborgen parel zit vaak vol!
+                                </p>
+                                <br />
+     
+                                <div class="flex flex-col md:flex-row mb-6 md:mb-12 md:gap-8 mt-5">
+                                    <div id="more-info" class="mb-4 md:mb-0 md:flex-shrink-0 md:max-w-[calc(50%-1rem)]">
+                                        <h3 class="m-0 font-page-title mb-2 text-brand-800 text-page-title text-xl font-bold leading-8"> Highlights </h3>
+                                        <div class="highlight">
+                                    <ul>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Win een cadeaubon t.w.v. &euro; 100</li><br />
+                                                <li class="mb-2 text-gray-700 text-dealhighlights"><strong> Zie hier de inhoud van de deal</strong></li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Elke maand trekken wij een winnaar uit de aanmeldingen</li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Winnaar ontvangt een persoonlijk bericht over het inwisselen van de cadeaubon</li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Cadeaubon dient in een keer besteed te worden</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="md:flex-shrink-0 md:max-w-[calc(50%-1rem)]">
+                                        <h3 class="m-0 font-page-title mb-2 text-brand-800 text-page-title text-xl font-bold leading-8"> Grote kleine letters </h3>
+                                        <div class="highlight">
+                                            <ul>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Niet inwisselbaar voor geld </li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Uw email wordt gebruikt voor onze nieuwsbrief</li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Niet geldig in combinatie met andere acties</li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• De winnaar wordt gepubliceerd op onze communicatiemiddelen</li>
+                                                <li class="mb-2 text-gray-700 text-dealhighlights">• Vragen over de deal? WhatsApp met: <a href="https://wa.me/send?phone=31628456815" target="_blank">+31628456815</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 id="loc" class="section-title-h2">
+                                    Locatie
+                                </h2>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2464.8117930078174!2d5.868784177237244!3d51.84613287189234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7084fa005f5c5%3A0xde4d8c9b2467f178!2srestaurant%20de%20Portier!5e0!3m2!1snl!2sid!4v1736315096666!5m2!1snl!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <h2 class="section-title-h2 mt-5">Openingstijden</h2>
+                                <table class="table table-striped table table-bordered" style="width:350px;">
+                                    <thead class="thead">
+                                        <th>Dag</th>
+                                    </thead>
+                                    <tbody class="table table-striped">
+                                        <tr>
+                                            <td>Maandag</td>
+                                            <td>Gesloten</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dinsdag</td>
+                                            <td>Gesloten</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Woensdag</td>
+                                            <td>12.00 - 22.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Donderdag</td>
+                                            <td>12.00 - 22.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vrijdag</td>
+                                            <td>12.00 - 22.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zaterdag</td>
+                                            <td>12.00 - 22.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zondag</td>
+                                            <td>12.00 - 22.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="pt-5">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
+                                        <h2 id="reserveren" class="section-title-h2">
+                                            Laat je gegevens achter om mee te doen
+                                        </h2>
+                                         <div class="card mt-5">
+                                        <div class="card-body">
+                                          <Contactform />
+                                            
+                                        </div>
+ 
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- ======= Gallery Section ======= -->
+        <section id="gallery" class="gallery">
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-0">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://www.14tien.nl/wp-content/uploads/2024/10/IMG-20241022-WA0014-1920x887.jpg" alt="" class="img-fluid" height="400">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://www.14tien.nl/wp-content/uploads/2022/05/20220502_185718-1920x865.jpg" alt="" class="img-fluid" height="400">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://www.14tien.nl/wp-content/uploads/2022/05/20220501_190921-scaled-e1658328574370-1920x864.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-lightbox" data-gall="gallery-item">
+                                <img src="https://www.14tien.nl/wp-content/uploads/2022/08/281606195_171802978547180_3385564429204157234_n.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- End Gallery Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>NomadicOwls</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <style is:inline>
+    .menu-block {
+        margin-bottom: 30px;
+    }
+
+    .menu-title {
+        border-bottom: 3px solid #e0e6e3;
+        margin-bottom: 36px;
+        padding-bottom: 10px;
+    }
+
+    .menu-content {
+        border-bottom: 1px solid #e0e6e3;
+        margin-bottom: 30px;
+    }
+
+    .dish-img {}
+
+    .dish-content {
+        margin-top: 12px;
+        margin-bottom: 40px;
+    }
+
+    .dish-meta {
+        font-size: 12px;
+        text-transform: uppercase;
+        display: block;
+        width: 210px;
+        line-height: 1.7;
+    }
+
+    .dish-title {
+        margin-bottom: 6px;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .well-block .dish-meta {
+        width: 100%;
+    }
+    </style>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <!-- <script src="assets/vendor/aos/aos.js"></script> -->
+    <script is:inline src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script is:inline src="/assets/js/main.js"></script>
+</body>
+
+</html>
